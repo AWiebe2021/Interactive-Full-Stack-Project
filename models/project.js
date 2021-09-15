@@ -20,6 +20,34 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    shipping_address: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    shipping_city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    shipping_state: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    shipping_zip: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     customer_id: {
       type: DataTypes.INTEGER,
       references: {
