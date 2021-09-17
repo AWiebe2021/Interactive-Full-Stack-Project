@@ -3,6 +3,7 @@ const Project = require('./project');
 const Process = require('./process');
 const Department = require('./department');
 const Customer = require('./customer');
+const User = require('./user');
 
 // create associations
 Customer.hasMany(Project, {
@@ -19,8 +20,7 @@ Process.hasMany(Project, {
 });
 
 Project.belongsTo(Process, {
-  foreignKey: 'process_id',
-  onDelete: 'SET NULL'
+  foreignKey: 'process_id'
 });
 
 Department.hasMany(Process, {
@@ -33,4 +33,4 @@ Process.belongsTo(Department, {
 });
 
 
-module.exports = { Project, Process, Department, Customer };
+module.exports = { Project, Process, Department, Customer, User };
