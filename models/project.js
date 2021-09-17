@@ -27,11 +27,12 @@ Project.init(
         key: 'id'
       }
     },
-    process_step: {
-      type: DataTypes.DECIMAL(4,1),
+    process_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'process',
-        key: 'step'
+        key: 'id'
       }
     }
   },
