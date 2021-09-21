@@ -20,7 +20,8 @@ Process.hasMany(Project, {
 });
 
 Project.belongsTo(Process, {
-  foreignKey: 'process_id'
+  foreignKey: 'process_id',
+  onDelete: 'SET NULL'
 });
 
 Department.hasMany(Process, {

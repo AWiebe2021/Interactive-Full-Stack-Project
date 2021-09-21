@@ -40,15 +40,13 @@ Customer.init(
       }
     },
     customer_zip: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
     }
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'customer'

@@ -9,9 +9,7 @@ router.get('/', (req, res) => {
   Project.findAll({
     attributes: [
       'id',
-      'project_url',
-      'title',
-      'date'
+      'title'
     ]
  
   })
@@ -29,9 +27,8 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'project_url',
       'title',
-      'created_at',
+
 
     ]
   })
