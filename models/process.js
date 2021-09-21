@@ -29,8 +29,7 @@ Process.init(
     },
     dept_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
+        references: {
         model: 'department',
         key: 'id'
       }

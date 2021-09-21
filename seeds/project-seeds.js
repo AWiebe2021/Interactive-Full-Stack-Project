@@ -4,7 +4,6 @@ const { Project } = require('../models');
 const projectdata = [
  {
   title:'Val Vista Lakes',
-  dateTimeStamp: '9/15/2021',
   shipping_address:'123 Val Vista ave', 
   shipping_city:'Gilbert', 
   shipping_state:'AZ', 
@@ -14,7 +13,6 @@ const projectdata = [
  },
  {
   title:'Autumn Creek',
-  dateTimeStamp: '9/15/2021',
   shipping_address:'234 McQueen rd', 
   shipping_city:'Chandler', 
   shipping_state:'AZ', 
@@ -24,7 +22,6 @@ const projectdata = [
  }, 
  {
   title:'Silverado',
-  dateTimeStamp: '9/15/2021',
   shipping_address:'345 Patrick st', 
   shipping_city:'Gilbert', 
   shipping_state:'AZ', 
@@ -34,7 +31,6 @@ const projectdata = [
  }, 
  {
   title:'Higley Center',
-  dateTimeStamp: '9/15/2021',
   shipping_address:'456 Greenfield rd', 
   shipping_city:'Gilbert', 
   shipping_state:'AZ', 
@@ -44,7 +40,6 @@ const projectdata = [
  }, 
  {
   title:'Mesa Community Center',
-  dateTimeStamp: '9/15/2021',
   shipping_address:'567 Columbus ave', 
   shipping_city:'Mesa', 
   shipping_state:'AZ', 
@@ -54,7 +49,6 @@ const projectdata = [
  }, 
  {
   title:'Tempe Arts Building',
-  dateTimeStamp: '9/15/2021',
   shipping_address:'678 Main st', 
   shipping_city:'Tempe', 
   shipping_state:'AZ', 

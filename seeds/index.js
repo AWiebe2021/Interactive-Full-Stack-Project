@@ -9,9 +9,10 @@ const sequelize = require('../config/connection');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('--------------');
-  
-  // await seedProjects();
-  // console.log('--------------');
+
+  await seedDepartment();
+  console.log('--------------'); 
+
 
   await seedProcesss();
   console.log('--------------');
@@ -19,7 +20,7 @@ const seedAll = async () => {
   await seedCustomers();
   console.log('--------------');
 
-  await seedDepartment();
+  await seedProjects();
   console.log('--------------');
 
   await seedUser();
