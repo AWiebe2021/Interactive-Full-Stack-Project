@@ -11,8 +11,7 @@ Customer.hasMany(Project, {
 });
 
 Project.belongsTo(Customer, {
-  foreignKey: 'customer_id',
-  onDelete: 'SET NULL'
+  foreignKey: 'customer_id'
 });
 
 Process.hasMany(Project, {
@@ -28,8 +27,7 @@ Department.hasMany(Process, {
 });
 
 Process.belongsTo(Department, {
-  foreignKey: 'dept_id',
-  onDelete: 'SET NULL'
+  foreignKey: 'dept_id'
 });
 
 

@@ -9,8 +9,9 @@ const sequelize = require('../config/connection');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('--------------');
-  await seedProjects();
-  console.log('--------------');
+  
+  // await seedProjects();
+  // console.log('--------------');
 
   await seedProcesss();
   console.log('--------------');

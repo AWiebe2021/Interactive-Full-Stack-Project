@@ -40,11 +40,8 @@ Customer.init(
       }
     },
     customer_zip: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
     }
   },
   {

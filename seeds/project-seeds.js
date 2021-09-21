@@ -10,7 +10,7 @@ const projectdata = [
   shipping_state:'AZ', 
   shipping_zip:'85251', 
   customer_id:'1', 
-  process_step:'1'
+  process_id:'1'
  },
  {
   title:'Autumn Creek',
@@ -20,7 +20,7 @@ const projectdata = [
   shipping_state:'AZ', 
   shipping_zip:'85295', 
   customer_id:'2', 
-  process_step:'1'
+  process_id:'1'
  }, 
  {
   title:'Silverado',
@@ -30,7 +30,7 @@ const projectdata = [
   shipping_state:'AZ', 
   shipping_zip:'85215', 
   customer_id:'3', 
-  process_step:'1'
+  process_id:'1'
  }, 
  {
   title:'Higley Center',
@@ -40,7 +40,7 @@ const projectdata = [
   shipping_state:'AZ', 
   shipping_zip:'85231', 
   customer_id:'4', 
-  process_step:'1'
+  process_id:'1'
  }, 
  {
   title:'Mesa Community Center',
@@ -50,7 +50,7 @@ const projectdata = [
   shipping_state:'AZ', 
   shipping_zip:'85345', 
   customer_id:'5', 
-  process_step:'1'
+  process_id:'1'
  }, 
  {
   title:'Tempe Arts Building',
@@ -60,7 +60,7 @@ const projectdata = [
   shipping_state:'AZ', 
   shipping_zip:'85132', 
   customer_id:'2', 
-  process_step:'1'
+  process_id:'1'
  }  
 ];
 
