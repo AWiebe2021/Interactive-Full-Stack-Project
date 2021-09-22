@@ -4,7 +4,7 @@ const {  Department, Project, Customer, Process } = require('../../models');
 // get all processs
 router.get('/', (req, res) => {
   Process.findAll({
-    attributes: { exclude: ['password'] }
+    attributes:  ['id', 'name']
   })
     .then(dbProcessData => res.json(dbProcessData))
     .catch(err => {
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   Process.findOne({
-    attributes: { exclude: ['password'] },
+    attributes:  ['id', 'name'],
     where: {
       id: req.params.id
     },
