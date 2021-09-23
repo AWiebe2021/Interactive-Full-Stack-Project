@@ -4,7 +4,7 @@ const {  Department, Project, Customer, Process } = require('../../models');
 // get all processs
 router.get('/', (req, res) => {
   Process.findAll({
-    attributes: { exclude: ['password'] }
+    // attributes:  ['id', 'processName']
   })
     .then(dbProcessData => res.json(dbProcessData))
     .catch(err => {
@@ -15,14 +15,14 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   Process.findOne({
-    attributes: { exclude: ['password'] },
+    attributes:  ['id', 'processName'],
     where: {
       id: req.params.id
     },
     include: [
       {
         model: Department,
-        attributes: ['id', 'name'],
+        attributes: ['id', 'processName'],
       }
     ]
   })
@@ -40,7 +40,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {processname: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  // expects {processprocessName: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   Process.create({
     processName: req.body.processName
   })
@@ -91,7 +91,7 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  // expects {processname: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  // expects {processprocessName: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 
   // pass in req.body instead to only update what's passed through
   Process.update(req.body, {

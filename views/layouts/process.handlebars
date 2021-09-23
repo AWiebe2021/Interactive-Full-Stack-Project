@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>head}}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<title>Slooth Hound</title>
+</head>
+<body>
+ 
+</body>
+</html>
+<section>
+    <div class='container'>
+        <h3>Bid</h3>
+
+        {{#if projects.length}}
+        <section>
+
+            <ol>
+                {{#each projects as |project|}}
+                <li>
+                    {{> projectCard project}}
+                    <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a>
+                </li>
+                {{/each}}
+            </ol>
+        </section>
+        {{/if}}
+
+    </div>
+    <div class='container'>
+        <h3>Order</h3>
+        {{#if projects.length}}
+        <section>
+            <ol>
+                {{#each projects as |project|}}
+                <li>
+                    {{> projectCard project}}
+                    <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a>
+                </li>
+                {{/each}}
+            </ol>
+        </section>
+        {{/if}}
+    </div>
+    <div class='container'>
+        <h3>Design</h3>
+        {{#if projects.length}}
+        <section>
+            <ol>
+                {{#each projects as |project|}}
+                <li>
+                    {{> projectCard project}}
+                    <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a>
+                </li>
+                {{/each}}
+            </ol>
+        </section>
+        {{/if}}
+    </div>
+    <div class='container'>
+        <h3>Production</h3>
+        {{#if projects.length}}
+        <section>
+            <ol>
+                {{#each projects as |project|}}
+                <li>
+                    {{> projectCard project}}
+                    <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a>
+                </li>
+                {{/each}}
+            </ol>
+        </section>
+        {{/if}}
+    </div>
+    <div class='container'>
+        <h3>Shipping</h3>
+        {{#if projects.length}}
+        <section>
+            <ol>
+                {{#each projects as |project|}}
+                <li>
+                    {{> projectCard project}}
+                    <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a>
+                </li>
+                {{/each}}
+            </ol>
+        </section>
+        {{/if}}
+    </div>
+</section>
+</html>

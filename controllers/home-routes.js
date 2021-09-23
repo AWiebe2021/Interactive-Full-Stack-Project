@@ -1,38 +1,30 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment, Vote } = require('../models');
+const { Project, User, Customer, Process, Department } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
   console.log('======================');
-  Post.findAll({
+  Project.findAll({
     attributes: [
       'id',
-      'post_url',
       'title',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      'process_id'
+      // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [
       {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
+        model: Customer,
+        attributes: ['id', 'customer_name'],
       },
-      {
-        model: User,
-        attributes: ['username']
-      }
     ]
   })
-    .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
+    .then(dbProjectData => {
+      const projects = dbProjectData.map(project => project.get({ plain: true }));
 
       res.render('homepage', {
-        posts,
+        projects,
         loggedIn: req.session.loggedIn
       });
     })
@@ -43,41 +35,34 @@ router.get('/', (req, res) => {
 });
 
 // get single post
-router.get('/post/:id', (req, res) => {
-  Post.findOne({
+router.get('/project/:id', (req, res) => {
+  Project.findOne({
     where: {
       id: req.params.id
     },
     attributes: [
       'id',
-      'post_url',
-      'title']
+      'title',
+      'created_at',
+      'process_id']
     ,
     include: [
       {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
+        model: Customer,
+        attributes: ['id', 'customer_name'],
       },
-      {
-        model: User,
-        attributes: ['username']
-      }
     ]
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
+    .then(dbProjectData => {
+      if (!dbProjectData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
 
-      const post = dbPostData.get({ plain: true });
+      const project = dbProjectData.get({ plain: true });
 
       res.render('single-post', {
-        post,
+        project,
         loggedIn: req.session.loggedIn
       });
     })

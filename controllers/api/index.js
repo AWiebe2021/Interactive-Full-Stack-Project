@@ -10,6 +10,6 @@ router.use('/custommer', customerRoutes);
 router.use('/department', departmentRoutes);
 router.use('/process', processRoutes);
 router.use('/project', projectRoutes);
-router.use('/user', userRoutes);
+router.use('/users', userRoutes);
 
 module.exports = router;
