@@ -9,9 +9,15 @@ router.get('/', (req, res) => {
   Project.findAll({
     attributes: [
       'id',
-      'title'
+      'title',
+      'created_at',
+      'shipping_address',
+      'shipping_city',
+      'shipping_state',
+      'shipping_zip',
+      'customer_id',
+      'process_id'
     ]
- 
   })
     .then(dbProjectData => res.json(dbProjectData))
     .catch(err => {
@@ -20,30 +26,30 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
-  Project.findOne({
-    where: {
-      id: req.params.id
-    },
-    attributes: [
-      'id',
-      'title',
+// router.get('/:id', (req, res) => {
+//   Project.findOne({
+//     where: {
+//       id: req.params.id
+//     },
+//     attributes: [
+//       'id',
+//       'title'
 
 
-    ]
-  })
-    .then(dbProjectData => {
-      if (!dbProjectData) {
-        res.status(404).json({ message: 'No project found with this id' });
-        return;
-      }
-      res.json(dbProjectData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+//     ]
+//   })
+//     .then(dbProjectData => {
+//       if (!dbProjectData) {
+//         res.status(404).json({ message: 'No project found with this id' });
+//         return;
+//       }
+//       res.json(dbProjectData);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 router.post('/', withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', project_url: 'https://taskmaster.com/press', user_id: 1}
@@ -59,10 +65,10 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
-router.put('/upvote', withAuth, (req, res) => {
+router.put('/advance', withAuth, (req, res) => {
   // custom static method created in models/Project.js
-  Project.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
-    .then(updatedVoteData => res.json(updatedVoteData))
+  Project.advance({ ...req.body, user_id: req.session.user_id },{})
+    .then(updatedAdvData => res.json(updatedAdvData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -72,7 +78,7 @@ router.put('/upvote', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
   Project.update(
     {
-      title: req.body.title
+      process_id: (req.body.process_id + 1)
     },
     {
       where: {

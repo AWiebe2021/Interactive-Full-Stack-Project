@@ -4,7 +4,7 @@ const {  Department, Project, Customer, Process } = require('../../models');
 // get all processs
 router.get('/', (req, res) => {
   Process.findAll({
-    // attributes:  ['id', 'processName']
+    attributes:  ['id', 'processName','step','dept_id']
   })
     .then(dbProcessData => res.json(dbProcessData))
     .catch(err => {

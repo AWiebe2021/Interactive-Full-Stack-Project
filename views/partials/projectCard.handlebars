@@ -1,18 +1,20 @@
-<template id="card-template">
-
+{{!-- <template id="card-template"> --}}
+ {{!-- {{#items}} --}}
   <div class="card">
-    <img class="card-img-top" src="{{image}}" alt="Card image cap">
+    {{!-- <img class="card-img-top" src="https://via.placeholder.com/200x100" alt="Card image cap"> --}}
     <div class="card-body">
       <h5 class="card-title">{{title}}</h5>
-      <p>{{shipping_addres}}</p>
-      <p>{{shipping_city}}</p>
-      <p>{{shipping_state}}</p>
-      <p>{{shipping_zip}}</p>
-      <p>{{customer_id}}</p>
-      <p>{{process-id}}</p>
+      {{!-- <p class="card-text">{{shipping_address}}</p> --}}
+      <p class="card-text">{{shipping_city}}</p>
+      <p class="card-text">{{shipping_state}}</p>
+      {{!-- <p class="card-text">{{shipping_zip}}</p> --}}
+      <p class="card-text">{{customer.customer_name}}</p>
+      {{!-- <p class="card-text">{{process_id}}</p> --}}
     </div>
     <div class="card-footer text-muted">
-      <a href="#" class="btn btn-outline-secondary float-right" data-toggle="modal" data-target="#myModal{{@index}}">read more ></a>
+      <a class="advProject-btn btn btn-outline-secondary float-right">Advance Project ></a>
+      {{!-- <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a> --}}
+      <a href="#" class="btn btn-outline-secondary float-left" data-toggle="modal" data-target="#myModal{{@index}}">read more</a>
     </div>
   </div>
   
@@ -36,8 +38,9 @@
     </div>
   </div>
 </div>
-
-</template>
+  {{!-- {{/items}} --}}
+{{!-- </template> --}}
 
 <div id="content"  class="card-grid"></div>
-<script src="/public/javascript/projectCard.js"></script>
+{{!-- <script src="/public/javascript/projectCard.js"></script> --}}
+<script src="/javascript/advProject.js"></script>

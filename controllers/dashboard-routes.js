@@ -6,27 +6,29 @@ const withAuth = require('../utils/auth');
 // get all projects for dashboard
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
-  console.log('======================');
+  console.log('=====================');
   Project.findAll({
-    // where: {
-    //   user_id: req.session.user_id
-    // },
     attributes: [
       'id',
       'title',
       'created_at',
-      // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE project.id = vote.project_id)'), 'vote_count']
+      'shipping_address',
+      'shipping_city',
+      'shipping_state',
+      'shipping_zip',
+      'customer_id',
+      'process_id'
     ],
-    include: [
+    include:
       {
         model: Customer,
-        attributes: ['id', 'customer_name'],
-      },
-    ]
+        attributes: ['customer_name']
+      }
+    
   })
     .then(dbProjectData => {
       const projects = dbProjectData.map(project => project.get({ plain: true }));
-      res.render('dashboard', { projects, loggedIn: true });
+      res.render('projectdash', { projects, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -40,7 +42,11 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'id',
       'title',
       'created_at',
-      // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE project.id = vote.project_id)'), 'vote_count']
+      'shipping_address',
+      'shipping_city',
+      'shipping_state',
+      'shipping_zip',
+      'process_id'
     ],
     include: [
       {

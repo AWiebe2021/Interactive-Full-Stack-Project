@@ -3,7 +3,16 @@ const { Customer } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-  Customer.findAll()
+  Customer.findAll({
+    attributes: [
+      'id',
+      'customer_name',
+      'customer_address',
+      'customer_city',
+      'customer_state',
+      'customer_zip'
+    ]
+  })
     .then(dbCustomerData => res.json(dbCustomerData))
     .catch(err => {
       console.log(err);

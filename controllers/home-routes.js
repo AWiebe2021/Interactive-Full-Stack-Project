@@ -4,14 +4,18 @@ const { Project, User, Customer, Process, Department } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
-  console.log('======================');
+  console.log('=========^^===========');
   Project.findAll({
     attributes: [
       'id',
       'title',
       'created_at',
+      'shipping_address',
+      'shipping_city',
+      'shipping_state',
+      'shipping_zip',
+      'customer_id',
       'process_id'
-      // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [
       {
@@ -44,8 +48,13 @@ router.get('/project/:id', (req, res) => {
       'id',
       'title',
       'created_at',
-      'process_id']
-    ,
+      'shipping_address',
+      'shipping_city',
+      'shipping_state',
+      'shipping_zip',
+      'customer_id',
+      'process_id'
+    ],
     include: [
       {
         model: Customer,

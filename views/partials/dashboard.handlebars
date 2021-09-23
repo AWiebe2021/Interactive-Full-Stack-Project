@@ -1,0 +1,105 @@
+ <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+ 
+ <div class="container-lg px-1 py-5" id="icon-grid">
+    <h2 class="pb-2 border-bottom">WORKFLOW</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-5 py-5">
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"/></svg>
+        <div>
+          <h4 class="fw-bold mb-0">BID</h4>
+          {{#if projects.length}}
+          <section>
+              {{#each projects as |project|}}
+              <li>
+                {{#ifeq project.process_id '1'}}
+                {{> projectCard project}}
+                {{/ifeq}}
+               </li>
+              {{/each}}
+          </section>
+          {{/if}}
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"/></svg>
+        <div>
+          <h4 class="fw-bold mb-0">ORDER</h4>
+          {{#if projects.length}}
+          <section>
+              {{#each projects as |project|}}
+              <li>
+                {{#ifeq project.process_id '2'}}
+                {{> projectCard project}}
+                {{/ifeq}}
+                {{!-- <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a> --}}
+              </li>
+              {{/each}}
+          </section>
+          {{/if}}
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#calendar3"/></svg>
+        <div>
+          <h4 class="fw-bold mb-0">DESIGN</h4>
+          {{#if projects.length}}
+          <section>
+              {{#each projects as |project|}}
+              <li>
+                {{#ifeq project.process_id '3'}}
+                {{> projectCard project}}
+                {{/ifeq}}
+                {{!-- <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a> --}}
+              </li>
+              {{/each}}
+          </section>
+          {{/if}}
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"/></svg>
+        <div>
+          <h4 class="fw-bold mb-0">PRODUCTION</h4>
+          {{#if projects.length}}
+          <section>
+              {{#each projects as |project|}}
+              <li>
+                {{#ifeq project.process_id '4'}}
+                {{> projectCard project}}
+                {{/ifeq}}
+                {{!-- <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a> --}}
+              </li>
+              {{/each}}
+          </section>
+          {{/if}}
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"/></svg>
+        <div>
+          <h4 class="fw-bold mb-0">SHIPPING</h4>
+          {{#if projects.length}}
+          <section>
+              {{#each projects as |project|}}
+              <li>
+                {{#ifeq project.process_id '5'}}
+                {{> projectCard project}}
+                {{/ifeq}}
+                {{!-- <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a> --}}
+              </li>
+              {{/each}}
+          </section>
+          {{/if}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{{!-- <section>
+ 
+</section> --}}
+
+
+
