@@ -4,6 +4,9 @@
     grid-column-gap: 30px;
     margin: 15px;
 } */
+body{
+  background-color: #73B8C9;
+}
 
 .btn-outline-secondary {
   background-color: #83A00A;
@@ -20,31 +23,28 @@ form{
     margin: 20px;
     align-items: center;
 }
-.navbar {
-  background-color: #064044;
+.topnav {
+  background-color: #4A5660;
   overflow: hidden;
 }
 
-.navbar a {
+.topnav a {
   float: left;
-  color: #CFD1D0;
+  color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
 
+.topnav a:hover {
+  background-color: #66C48D;
+  color:#261E0B;
+}
+
+
 .header img{
-  width: 10%;
-  height:auto;
-  padding:20px;
+  width: auto;
 }
-.header{
-  display: flex;
-  width:50%;
-  height: auto;
-  background-color: #CFD1D0;
-  border-color: #001E1F;
-  border-radius: 10px;
-}
+
 
