@@ -1,12 +1,50 @@
-.card-grid {
+/* .card-grid {
     display: grid;
     grid-template-columns: repeat( 4, 1fr);
     grid-column-gap: 30px;
     margin: 15px;
-}
+} */
 
 .btn-outline-secondary {
   background-color: #83A00A;
   color: #C53A83;
   color: #83A00A;
 }
+
+form{
+    display: flex;
+    justify-content: space-around;
+    width: inherit;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+}
+.navbar {
+  background-color: #064044;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  color: #CFD1D0;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.header img{
+  width: 10%;
+  height:auto;
+  padding:20px;
+}
+.header{
+  display: flex;
+  width:50%;
+  height: auto;
+  background-color: #CFD1D0;
+  border-color: #001E1F;
+  border-radius: 10px;
+}
+

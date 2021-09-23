@@ -1,27 +1,34 @@
 <template id="card-template">
+
   <div class="card">
+    <img class="card-img-top" src="{{image}}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title"><span></span></h5>
-      <p class="card-text"><span></span></p>
+      <h5 class="card-title">{{title}}</h5>
+      <p>{{shipping_addres}}</p>
+      <p>{{shipping_city}}</p>
+      <p>{{shipping_state}}</p>
+      <p>{{shipping_zip}}</p>
+      <p>{{customer_id}}</p>
+      <p>{{process-id}}</p>
     </div>
     <div class="card-footer text-muted">
-      <a href="#" class="btn btn-outline-secondary float-right" data-toggle="modal" data-target="#myModal">read more></a>
+      <a href="#" class="btn btn-outline-secondary float-right" data-toggle="modal" data-target="#myModal{{@index}}">read more ></a>
     </div>
   </div>
   
   <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header bg-light">
-        <h5 class="modal-title" id="exampleModalLabel"><span></span></h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{title}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-            <img class="card-img-top" src="" alt="Card image cap">
-        
+            <img class="card-img-top" src="{{image}}" alt="Card image cap">
+            {{{description}}}
       </div>
       <div class="modal-footer bg-light">
         <button type="button" class="btn  btn-outline-secondary" data-dismiss="modal">Close</button>
@@ -29,6 +36,7 @@
     </div>
   </div>
 </div>
+
 </template>
 
 <div id="content"  class="card-grid"></div>
