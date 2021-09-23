@@ -21,7 +21,7 @@
   <ol>
     {{#each projects as |project|}}
     <li>
-      {{> project-info project}}
+      {{> projectCard project}}
       <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a>
     </li>
     {{/each}}
