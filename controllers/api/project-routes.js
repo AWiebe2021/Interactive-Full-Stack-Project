@@ -65,10 +65,25 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
-router.put('/advance', withAuth, (req, res) => {
+router.put('/advance/:id', withAuth, (req, res) => {
   // custom static method created in models/Project.js
-  Project.advance({ ...req.body, user_id: req.session.user_id },{})
-    .then(updatedAdvData => res.json(updatedAdvData))
+  Project.update(
+    {
+      process_id: req.body.process_id
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+    .then(dbProjectData => {
+      if (!dbProjectData) {
+        res.status(404).json({ message: 'No project found with this id' });
+        return;
+      }
+      res.json(dbProjectData);
+    })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -76,9 +91,11 @@ router.put('/advance', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
+
+
   Project.update(
     {
-      process_id: (req.body.process_id + 1)
+      process_id: req.body.process_id
     },
     {
       where: {

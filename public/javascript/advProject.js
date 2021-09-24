@@ -1,14 +1,12 @@
 async function advProjectClickHandler(event) {
   event.preventDefault();
+  const pro_id = document.getElementById('pro_id').innerHTML;
+  const proj_id = document.getElementById('project_id').innerHTML;
 
-  // const id = window.location.toString().split('/')[
-  //   window.location.toString().split('/').length - 1
-  // ];
-  // console.log(process_id);
-  const response = await fetch('/api/project/advance', {
+  const response = await fetch(`/api/project/advance/${proj_id}`, {
     method: 'PUT',
     body: JSON.stringify({
-      process_id: process_id + 1
+      process_id: (parseInt(pro_id) + 1)
     }),
     headers: {
       'Content-Type': 'application/json'
@@ -22,4 +20,5 @@ async function advProjectClickHandler(event) {
   }
 }
 
-document.querySelector('.advProject-btn').addEventListener('click', advProjectClickHandler);
+document.getElementById('advProject-btn').addEventListener('click', advProjectClickHandler);
+
