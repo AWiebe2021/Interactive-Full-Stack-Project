@@ -15,14 +15,14 @@ Project.belongsTo(Customer, {
   onDelete: 'SET NULL'
 });
 
-Process.hasMany(Project, {
-  foreignKey: 'process_id'
-});
+// Process.hasMany(Project, {
+//   foreignKey: 'process_id'
+// });
 
-Project.belongsTo(Process, {
-  foreignKey: 'process_id',
-  onDelete: 'SET NULL'
-});
+// Project.belongsTo(Process, {
+//   foreignKey: 'process_id',
+//   onDelete: 'SET NULL'
+// });
 
 Department.hasMany(Process, {
   foreignKey: 'dept_id'

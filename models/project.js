@@ -1,26 +1,26 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 // create our Project model
-class Project extends Model {
-  static advance(body, _models) {
-      return Project.findOne({
-        where: {
-          id: body.project_id
-        },
-        attributes: [
-          'id',
-          'title',
-          'created_at',
-          'shipping_address',
-          'shipping_city',
-          'shipping_state',
-          'shipping_zip',
-          'customer_id',
-          'process_id'
-        ]
-      });
-    };
-  }
+class Project extends Model {}
+//   static advance(body, _models) {
+//       return Project.findOne({
+//         where: {
+//           id: body.project_id
+//         },
+//         attributes: [
+//           'id',
+//           'title',
+//           'created_at',
+//           'shipping_address',
+//           'shipping_city',
+//           'shipping_state',
+//           'shipping_zip',
+//           'customer_id',
+//           'process_id'
+//         ]
+//       });
+//     };
+//   }
 
 
 // create fields/columns for Project model
@@ -74,10 +74,10 @@ Project.init(
     process_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      references: {
-        model: 'process',
-        key: 'id'
-      }
+      // references: {
+      //   model: 'process',
+      //   key: 'id'
+      // }
     }
   },
   {

@@ -1,0 +1,62 @@
+<div class="wrapper">
+  
+  <div class="left">
+    <div class="front">
+      <div class="sectionWrap">
+        <h1>Title</h1>
+        <hr>
+        <p class="preview">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        <button class="openB"><p>read more...</p></button>
+      </div>
+    </div>
+    <div class="back">
+      <div class="sectionWrap">
+      <h1>Left</h1>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata</p>
+      </div>
+    </div>
+  </div>
+  <div class="middle">
+    <div class="sectionWrap">
+      <h1>Middle</h1>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata</p>
+    </div>
+  </div>
+  <div class="right">
+      <div class="sectionWrap">
+      <h1>Right</h1>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata</p>
+      </div>
+    <button class="closeB">✕</button>
+  </div>
+</div>
+
+
+<script>
+$(function(){
+  $(".openB").click(function(){
+    $(".left").addClass("open");
+    setTimeout(function(){
+      $(".right").addClass("open");
+    }, 250);
+    setTimeout(function(){
+      $(".back").addClass("open");
+    }, 350);
+    $(".closeB").delay(1000).fadeIn();
+  });
+
+  $(".closeB").click(function(){
+    setTimeout(function(){
+      $(".left").removeClass("open");
+    }, 250);
+    $(".right").removeClass("open");
+    setTimeout(function(){
+      $(".back").removeClass("open");
+    }, 600);
+    $(".closeB").fadeOut();
+  });
+});
+</script>

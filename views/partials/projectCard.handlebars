@@ -9,12 +9,13 @@
       {{!-- <p class="card-text">{{shipping_address}}</p> --}}
       <p class="card-text">{{shipping_city}}</p>
       <p class="card-text">{{shipping_state}}</p>
-      {{!-- <p class="card-text">{{shipping_zip}}</p> --}}
+      <p id="pro_id" class="card-text" style="visibility: hidden;">{{process_id}}</p>
+      <p id="project_id" class="card-text" style="visibility: hidden;">{{id}}</p>
       {{!-- <p class="card-text">{{customer.customer_name}}</p> --}}
       {{!-- <p class="card-text">{{process_id}}</p> --}}
     </div>
     <div class="card-footer text-muted">
-      <a class="advProject-btn btn btn-outline-secondary float-right">Advance Project ></a>
+      <a id="advProject-btn" class="btn btn-outline-secondary float-right">Advance Project ></a>
       {{!-- <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit project</a> --}}
       <a class="btn btn-outline-secondary float-left" data-bs-toggle="modal" data-bs-target="#myModal{{@index}}">read more</a>
     </div>
