@@ -2,10 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 // create our Project model
 class Project extends Model {
-  static advance(body, models) {
+  static advance(body, _models) {
       return Project.findOne({
         where: {
-          id: body.post_id
+          id: body.project_id
         },
         attributes: [
           'id',

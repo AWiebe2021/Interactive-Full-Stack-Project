@@ -1,10 +1,10 @@
 async function advProjectClickHandler(event) {
   event.preventDefault();
 
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
-  console.log(process_id);
+  // const id = window.location.toString().split('/')[
+  //   window.location.toString().split('/').length - 1
+  // ];
+  // console.log(process_id);
   const response = await fetch('/api/project/advance', {
     method: 'PUT',
     body: JSON.stringify({

@@ -27,7 +27,7 @@ const projectdata = [
   shipping_state:'AZ', 
   shipping_zip:'85215', 
   customer_id:'3', 
-  process_id:'2'
+  process_id:'3'
  }, 
  {
   title:'Higley Center',
@@ -36,8 +36,8 @@ const projectdata = [
   shipping_state:'AZ', 
   shipping_zip:'85231', 
   customer_id:'4', 
-  process_id:'3'
- }, 
+  process_id:'4'
+ },
  {
   title:'Mesa Community Center',
   shipping_address:'567 Columbus ave', 
