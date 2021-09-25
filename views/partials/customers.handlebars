@@ -1,0 +1,55 @@
+ <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+ <div class="container-lg px-1 py-5" id="icon-grid">
+    <h2 class="pb-2 border-bottom">WORKFLOW</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-5 py-5">
+      <div class="col d-flex align-items-start">
+        <div>
+ 
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+ 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+          {{#if customers.length}}
+          <section>
+              {{#each customers as |customer|}}
+              <li>
+ 
+                {{cardunfolding}}
+
+               </li>
+              {{/each}}
+          </section>
+          {{/if}}
+ 
+
+
+
+
