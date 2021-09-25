@@ -50,46 +50,6 @@ router.post('/', (req, res) => {
     });
 });
 
-router.post('/login', (req, res) => {
-  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
-  Process.findOne({
-    where: {
-      email: req.body.email
-    }
-  }).then(dbProcessData => {
-    if (!dbProcessData) {
-      res.status(400).json({ message: 'No process with that email address!' });
-      return;
-    }
-
-    const validPassword = dbProcessData.checkPassword(req.body.password);
-
-    if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password!' });
-      return;
-    }
-
-    req.session.save(() => {
-      req.session.process_id = dbProcessData.id;
-      req.session.processName = dbProcessData.processName;
-      req.session.loggedIn = true;
-  
-      res.json({ process: dbProcessData, message: 'You are now logged in!' });
-    });
-  });
-});
-
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  }
-  else {
-    res.status(404).end();
-  }
-});
-
 router.put('/:id', (req, res) => {
   // expects {processprocessName: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 

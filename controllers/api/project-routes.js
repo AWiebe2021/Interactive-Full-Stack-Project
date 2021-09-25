@@ -26,31 +26,6 @@ router.get('/', (req, res) => {
     });
 });
 
-// router.get('/:id', (req, res) => {
-//   Project.findOne({
-//     where: {
-//       id: req.params.id
-//     },
-//     attributes: [
-//       'id',
-//       'title'
-
-
-//     ]
-//   })
-//     .then(dbProjectData => {
-//       if (!dbProjectData) {
-//         res.status(404).json({ message: 'No project found with this id' });
-//         return;
-//       }
-//       res.json(dbProjectData);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
-
 router.post('/', withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', project_url: 'https://taskmaster.com/press', user_id: 1}
   Project.create({
