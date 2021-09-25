@@ -1,18 +1,62 @@
  <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
- 
 
+ <div class="container-lg px-1 py-5" id="icon-grid">
+    <h2 class="pb-2 border-bottom">PROJECTS</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-5 py-5">
+      <div class="col d-flex align-items-start">
+        <div>
           {{#if projects.length}}
           <section>
               {{#each projects as |project|}}
               <li>
- 
-                {{> projectCard project}}
 
-               </li>
+          <button id={{id}} class="btn-primary" href="/project/"+{{id}}>{{title}}</button>
+
+              </li>
               {{/each}}
           </section>
-          {{/if}}
+          {{/if}} 
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+        {{!-- <form action="/action_page.php"> --}}
+          <label for="title">title: </label>
+          <input type="text" id="title" name="title"><br><br>
+          <label for="shipping_address">shipping_address: </label>
+          <input type="text" id="shipping_address" name="project_address"><br><br>
+          <label for="shipping_city">shipping_city: </label>
+          <input type="text" id="shipping_city" name="project_city"><br><br>
+          <label for="shipping_state">shipping_state: </label>
+          <input type="text" id="shipping_state" name="project_state"><br><br>
+          <label for="shipping_zip">shipping_zip: </label>
+          <input type="text" id="shipping_zip" name="project_zip"><br><br>
+
+          <label for="customer_id">customer_id: </label>
+          <input type="text" id="customer_id" name="customer_id"><br><br>
+
+          <label for="process_id">process_id: </label>
+          <input type="text" id="process_id" name="process_id"><br><br>
+          {{!-- <input type="submit" value="Submit"> --}}
+        {{!-- </form> --}}
+        {{!-- <button class="btn-primary" onclick="alert('Hello world!')">Click Me!</button> --}}
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+
+        <button class="btn-primary" onclick="alert('Hello world!')">Update</button>
+        <button class="btn-primary" onclick="alert('Hello world!')">Create</button>
+        <button class="btn-primary" onclick="alert('Hello world!')">Delete</button>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
  
 
 

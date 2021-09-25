@@ -1,7 +1,13 @@
  <div class="header">
      {{>navbar}} 
         <img src="/assets/slooth banner.png">
-       </div>
+        {{#if loggedIn}}
+        <button id="logout" class="btn-logout">Logout</button>
+        
+        {{else}}
+        <button id="login" class="btn-login" href="/">Login</button>
+        {{/if}}
+ </div>
 
-
+<script src="\javascript\logout.js"></script>
   
