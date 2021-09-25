@@ -1,18 +1,52 @@
  <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
- 
 
-          {{#if processs.length}}
+ <div class="container-lg px-1 py-5" id="icon-grid">
+    <h2 class="pb-2 border-bottom">PROCESSES</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-5 py-5">
+      <div class="col d-flex align-items-start">
+        <div>
+          {{#if processes.length}}
           <section>
-              {{#each processs as |process|}}
+              {{#each processes as |process|}}
               <li>
- 
-                {{process}}
 
-               </li>
+          <button id={{id}} class="btn-primary" href="/process/"+{{id}}>{{processName}}</button>
+
+              </li>
               {{/each}}
           </section>
-          {{/if}}
+          {{/if}} 
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+        {{!-- <form action="/action_page.php"> --}}
+          <label for="fname">processName: </label>
+          <input type="text" id="processName" name="processName"><br><br>
+          <label for="lname">step: </label>
+          <input type="text" id="step" name="step"><br><br>
+         <label for="lname">dept_id: </label>
+          <input type="text" id="dept_id" name="dept_id"><br><br> 
+          {{!-- <input type="submit" value="Submit"> --}}
+        {{!-- </form> --}}
+        {{!-- <button class="btn-primary" onclick="alert('Hello world!')">Click Me!</button> --}}
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+
+        <button class="btn-primary" onclick="alert('Hello world!')">Update</button>
+        <button class="btn-primary" onclick="alert('Hello world!')">Create</button>
+        <button class="btn-primary" onclick="alert('Hello world!')">Delete</button>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
  
 
 

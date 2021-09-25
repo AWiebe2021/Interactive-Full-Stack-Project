@@ -2,32 +2,47 @@
 
 
  <div class="container-lg px-1 py-5" id="icon-grid">
-    <h2 class="pb-2 border-bottom">WORKFLOW</h2>
+    <h2 class="pb-2 border-bottom">CUSTOMERS</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-5 py-5">
       <div class="col d-flex align-items-start">
         <div>
- 
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div>
+          {{#if customers.length}}
+          <section>
+              {{#each customers as |customer|}}
+              <li>
 
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div>
+          <button id={{id}} class="btn-primary" href="/customer/"+{{id}}>{{customer_name}}</button>
 
+              </li>
+              {{/each}}
+          </section>
+          {{/if}} 
         </div>
       </div>
       <div class="col d-flex align-items-start">
         <div>
+        {{!-- <form action="/action_page.php"> --}}
+          <label for="fname">customer_name: </label>
+          <input type="text" id="customer_name" name="customer_name"><br><br>
+          <label for="lname">customer_address: </label>
+          <input type="text" id="customer_address" name="customer_address"><br><br>
+          <label for="lname">customer_city: </label>
+          <input type="text" id="customer_city" name="customer_city"><br><br>
+          <label for="lname">customer_state: </label>
+          <input type="text" id="customer_state" name="customer_state"><br><br>
+          <label for="lname">customer_zip: </label>
+          <input type="text" id="customer_zip" name="customer_zip"><br><br>
+          {{!-- <input type="submit" value="Submit"> --}}
+        {{!-- </form> --}}
+        {{!-- <button class="btn-primary" onclick="alert('Hello world!')">Click Me!</button> --}}
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
 
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <div>
- 
-        </div>
+        <button class="btn-primary" onclick="alert('Hello world!')">Update</button>
+        <button class="btn-primary" onclick="alert('Hello world!')">Create</button>
+        <button class="btn-primary" onclick="alert('Hello world!')">Delete</button>
+
       </div>
     </div>
   </div>
@@ -36,18 +51,6 @@
 
 
 
-
-          {{#if customers.length}}
-          <section>
-              {{#each customers as |customer|}}
-              <li>
- 
-                {{cardunfolding}}
-
-               </li>
-              {{/each}}
-          </section>
-          {{/if}}
  
 
 

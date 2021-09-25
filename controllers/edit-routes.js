@@ -28,7 +28,7 @@ router.get('/project', withAuth, (req, res) => {
   })
     .then(dbProjectData => {
       const projects = dbProjectData.map(project => project.get({ plain: true }));
-      res.render('editProject', { projects, loggedIn: true });
+      res.render('editProject', { projects, loggedIn: true, layout: false });
     })
     .catch(err => {
       console.log(err);
@@ -42,7 +42,7 @@ router.get('/user', (req, res) => {
   })
     .then(dbUserData => {
       const users = dbUserData.map(user => user.get({ plain: true }));
-      res.render('editUser', { users, loggedIn: true });
+      res.render('editUser', { users, loggedIn: true, layout: false });
     })
     .catch(err => {
       console.log(err);
@@ -62,8 +62,9 @@ router.get('/customer', (req, res) => {
     ]
   })
   .then(dbCustomerData => {
+    console.log('HERE!');
     const customers = dbCustomerData.map(customer => customer.get({ plain: true }));
-    res.render('editCustomer', { customers, loggedIn: true });
+    res.render('editCustomer', { customers, loggedIn: true, layout: false });
   })
     .catch(err => {
       console.log(err);
@@ -73,11 +74,11 @@ router.get('/customer', (req, res) => {
 
 router.get('/process', (req, res) => {
   Process.findAll({
-    attributes:  ['id', 'processName','step','dept_id']
+    attributes:  ['id','processName','step','dept_id']
   })
   .then(dbProcessData => {
     const processes = dbProcessData.map(process => process.get({ plain: true }));
-    res.render('editProcess', { processes, loggedIn: true });
+    res.render('editProcess', { processes, loggedIn: true, layout: false });
   })
     .catch(err => {
       console.log(err);
@@ -95,7 +96,7 @@ router.get('/department', (req, res) => {
   })
   .then(dbDepartmentData => {
     const departments = dbDepartmentData.map(department => department.get({ plain: true }));
-    res.render('editDepartment', { departments, loggedIn: true });
+    res.render('editDepartment', { departments, loggedIn: true, layout: false });
   })
     .catch(err => {
       console.log(err);

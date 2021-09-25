@@ -28,7 +28,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbProjectData => {
       const projects = dbProjectData.map(project => project.get({ plain: true }));
-      res.render('projectdash', { projects, loggedIn: true });
+      res.render('homepage', { projects, loggedIn: true });
     })
     .catch(err => {
       console.log(err);

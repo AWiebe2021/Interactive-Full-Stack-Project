@@ -1,18 +1,51 @@
  <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
- 
 
+ <div class="container-lg px-1 py-5" id="icon-grid">
+    <h2 class="pb-2 border-bottom">USERS</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-5 py-5">
+      <div class="col d-flex align-items-start">
+        <div>
           {{#if users.length}}
           <section>
               {{#each users as |user|}}
               <li>
- 
-                {{user}}
 
-               </li>
+          <button id={{id}} class="btn-primary" href="/user/"+{{id}}>{{username}}</button>
+
+              </li>
               {{/each}}
           </section>
-          {{/if}}
+          {{/if}} 
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+        {{!-- <form action="/action_page.php"> --}}
+          <label for="username">username: </label>
+          <input type="text" id="username" name="username"><br><br>
+          <label for="email">email: </label>
+          <input type="text" id="email" name="email"><br><br>
+ 
+          {{!-- <input type="submit" value="Submit"> --}}
+        {{!-- </form> --}}
+        {{!-- <button class="btn-primary" onclick="alert('Hello world!')">Click Me!</button> --}}
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+
+        <button class="btn-primary" onclick="alert('Hello world!')">Update</button>
+        <button class="btn-primary" onclick="alert('Hello world!')">Create</button>
+        <button class="btn-primary" onclick="alert('Hello world!')">Delete</button>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
  
 
 
