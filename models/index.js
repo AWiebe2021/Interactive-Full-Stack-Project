@@ -1,9 +1,13 @@
 // import all models
-const Project = require('./project');
-const Process = require('./process');
-const Department = require('./department');
-const Customer = require('./customer');
-const User = require('./user');
+const path = require('path');
+
+
+const Project = require(path.join(__dirname, './project'));
+const Process = require(path.join(__dirname, './process'));
+const Department = require(path.join(__dirname, './department'));
+const Customer = require(path.join(__dirname, './customer'));
+const User = require(path.join(__dirname, './user'));
+
 
 // create associations
 Customer.hasMany(Project, {

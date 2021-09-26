@@ -34,10 +34,6 @@ app.use(express.static(path.join(__dirname, '/public/')));
 
 app.use(require('./controllers/'));
 
-// hbs.handlebars.registerPartial('login');
-// hbs.handlebars.registerPartial('projectCard');
-// hbs.handlebars.registerPartial('dashboard');
-
 hbs.handlebars.registerHelper('ifeq', function (a, b, options) {
   if (a == b) { return options.fn(this); }
   return options.inverse(this);
