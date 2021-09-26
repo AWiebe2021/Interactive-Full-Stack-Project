@@ -8,6 +8,7 @@ const Department = require(path.join(__dirname, '/department.js'));
 const Customer = require(path.join(__dirname, '/customer.js'));
 const User = require(path.join(__dirname, '/user.js'));
 
+// console.log(__dirname);
 
 // create associations
 Customer.hasMany(Project, {
