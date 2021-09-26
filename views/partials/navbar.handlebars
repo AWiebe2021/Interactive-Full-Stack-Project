@@ -1,9 +1,26 @@
 <div class="topnav">
+  <div class='regTopnav'>
   <a href='/'>Home</a>
   <a href='/editpage/customer'>Customers</a>
   <a href='/editpage/department'>Departments</a>
   <a href='/editpage/process'>Processes</a>
   <a href='/editpage/project'>Projects</a>
-
-
+  </div>
+   {{#if loggedIn}}
+        <button id="logout" class="btn-logout">Logout</button>
+        
+        {{else}}
+        <button id="login" class="btn-login" href="/">Login</button>
+        {{/if}}
 </div>
+  <div class="dropdown">
+
+  <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href='/'>Home</a>
+      <a href='/editpage/customer'>Customers</a>
+      <a href='/editpage/department'>Departments</a>
+      <a href='/editpage/process'>Processes</a>
+      <a href='/editpage/project'>Projects</a>
+    </div>
+    </div>
