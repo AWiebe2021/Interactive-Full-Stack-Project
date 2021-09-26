@@ -2,11 +2,11 @@
 const path = require('path');
 
 
-const Project = require(path.join(__dirname, './project.js'));
-const Process = require(path.join(__dirname, './process.js'));
-const Department = require(path.join(__dirname, './department.js'));
-const Customer = require(path.join(__dirname, './customer.js'));
-const User = require(path.join(__dirname, './user.js'));
+const Project = require(path.join(__dirname, '/project.js'));
+const Process = require(path.join(__dirname, '/process.js'));
+const Department = require(path.join(__dirname, '/department.js'));
+const Customer = require(path.join(__dirname, '/customer.js'));
+const User = require(path.join(__dirname, '/user.js'));
 
 
 // create associations
