@@ -27,21 +27,23 @@ Technologies Used<br>
 ●JQuery<br>
 ●JSON<br>
 
-
-
 Your project should fulfill the following requirements:<br>
 
-  [X]  Be deployed to GitHub Pages.<br>
-  [X]  Be interactive (i.e., accept and respond to user input).<br>
-  [X]  Use at least two server-side APIs.<br>
-  [X]  Does not use alerts, confirms, or prompts (use modals).<br>
-  [X]  Use client-side storage to store persistent data.<br>
-  [X]  Be responsive.<br>
+  [X]  Use Node.js and Express.js to create a RESTful API.<br>
+  [X]  Use Handlebars.js as the templating engine.<br>
+  [X]  Use MySQL and the Sequelize ORM for the database.<br>
+  [X]  Have both GET and POST routes for retrieving and adding new data.<br>
+  [X]  Be deployed using Heroku (with data).<br>
+  [X]  Use at least one new library, package, or technology that we haven’t discussed.<br>
   [X]  Have a polished UI.<br>
+  [X]  Be responsive.<br>
+  [X]  Be interactive (i.e., accept and respond to user input).<br>
+  [X]  Have a folder structure that meets the MVC paradigm.<br>
+  [X]  Include authentication (express-session and cookies).<br>
+  [X]  Protect API keys and sensitive information with environment variables.<br>
   [X]  Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).<br>
   [X]  Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).<br>
   [X]  Finally, you must add your project to the portfolio that you created in Module 2.<br>
-
 
 ## Installation
 
