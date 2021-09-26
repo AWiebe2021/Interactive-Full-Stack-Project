@@ -5,8 +5,8 @@ const withAuth = require('../utils/auth');
 
 // get all projects for editor
 router.get('/project', withAuth, (req, res) => {
-  console.log(req.session);
-  console.log('=====================');
+  // console.log(req.session);
+  // console.log('=====================');
   Project.findAll({
     attributes: [
       'id',
@@ -62,7 +62,6 @@ router.get('/customer', (req, res) => {
     ]
   })
   .then(dbCustomerData => {
-    console.log('HERE!');
     const customers = dbCustomerData.map(customer => customer.get({ plain: true }));
     res.render('editCustomer', { customers, loggedIn: true, layout: false });
   })
@@ -87,7 +86,7 @@ router.get('/process', (req, res) => {
 });
 
 router.get('/department', (req, res) => {
-  console.log('======================');
+  // console.log('======================');
   Department.findAll({
     attributes: [
       'id',

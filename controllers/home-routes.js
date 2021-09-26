@@ -4,7 +4,7 @@ const { Project, User, Customer, Process, Department } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
-  console.log('=========^^===========');
+  // console.log('=========^^===========');
   Project.findAll({
     attributes: [
       'id',

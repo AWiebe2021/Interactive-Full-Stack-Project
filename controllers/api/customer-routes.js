@@ -20,12 +20,33 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
-  // expects => {customer_text: "This is the customer", user_id: 1, post_id: 2}
-  Customer.create({
-    name: req.body.name,
-    address: req.body.address
+router.get('/:id', (req, res) => {
+  Customer.findOne({
+    where: {
+      id: req.params.id
+    }
   })
+    .then(dbCustomerData => {
+      if (!dbCustomerData) {
+        res.status(404).json({ message: 'No CUSTOMER found with this id' });
+        return;
+      }
+      res.json(dbCustomerData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.post('/', withAuth, (req, res) => {
+  Customer.create({
+    customer_name: req.body.customer_name,
+    customer_address: req.body.customer_address,
+    customer_city: req.body.customer_city,
+    customer_state: req.body.customer_state,
+    customer_zip: req.body.customer_zip
+    })
     .then(dbCustomerData => res.json(dbCustomerData))
     .catch(err => {
       console.log(err);
@@ -79,5 +100,7 @@ router.put('/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
 
 module.exports = router;

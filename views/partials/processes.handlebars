@@ -1,5 +1,5 @@
  <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
  <div class="container-lg px-1 py-5" id="icon-grid">
     <h2 class="pb-2 border-bottom">PROCESSES</h2>
@@ -10,9 +10,15 @@
           <section>
               {{#each processes as |process|}}
               <li>
-
-          <button id={{id}} class="btn-primary" href="/process/"+{{id}}>{{processName}}</button>
-
+                <button id={{id}} class="btn-primary" href="/process/"+{{id}}>{{processName}}</button>
+                <script>
+                    $("#{{id}}").click(function(event) {
+                        $("#processName").val("{{processName}}");
+                        $("#step").val("{{step}}");
+                        $("#dept_id").val("{{dept_id}}");
+                        $("#process_id").val("{{id}}");
+                    });
+                </script>
               </li>
               {{/each}}
           </section>
@@ -21,29 +27,29 @@
       </div>
       <div class="col d-flex align-items-start">
         <div>
-        {{!-- <form action="/action_page.php"> --}}
           <label for="fname">processName: </label>
           <input type="text" id="processName" name="processName"><br><br>
           <label for="lname">step: </label>
           <input type="text" id="step" name="step"><br><br>
          <label for="lname">dept_id: </label>
           <input type="text" id="dept_id" name="dept_id"><br><br> 
-          {{!-- <input type="submit" value="Submit"> --}}
-        {{!-- </form> --}}
-        {{!-- <button class="btn-primary" onclick="alert('Hello world!')">Click Me!</button> --}}
+          <input type="hidden" id="process_id" name="process_id"><br><br>
         </div>
       </div>
       <div class="col d-flex align-items-start">
 
-        <button class="btn-primary" onclick="alert('Hello world!')">Update</button>
-        <button class="btn-primary" onclick="alert('Hello world!')">Create</button>
-        <button class="btn-primary" onclick="alert('Hello world!')">Delete</button>
+        <button class="btn-primary update-process" >Update</button>
+        <button class="btn-primary create-process" >Create</button>
+        <button class="btn-primary delete-process" >Delete</button>
 
       </div>
     </div>
   </div>
 
 
+<script src="/javascript/add-process.js"></script>
+<script src="/javascript/update-process.js"></script>
+<script src="/javascript/delete-process.js"></script>
 
 
 
