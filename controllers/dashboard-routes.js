@@ -5,8 +5,8 @@ const withAuth = require('../utils/auth');
 
 // get all projects for dashboard
 router.get('/', withAuth, (req, res) => {
-  console.log(req.session);
-  console.log('=====================');
+  // console.log(req.session);
+  // console.log('=====================');
   Project.findAll({
     attributes: [
       'id',

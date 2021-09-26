@@ -1,5 +1,5 @@
  <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
  <div class="container-lg px-1 py-5" id="icon-grid">
     <h2 class="pb-2 border-bottom">CUSTOMERS</h2>
@@ -8,47 +8,53 @@
         <div>
           {{#if customers.length}}
           <section>
-              {{#each customers as |customer|}}
+            {{#each customers as |customer|}}
               <li>
-
-          <button id={{id}} class="btn-primary" href="/customer/"+{{id}}>{{customer_name}}</button>
-
+                <button id={{id}} class="btn-primary" href='/api/customer/{{id}}'>{{customer_name}}</button>
+                <script>
+                    $("#{{id}}").click(function(event) {
+                        $("#customer_name").val("{{customer_name}}");
+                        $("#customer_address").val("{{customer_address}}");
+                        $("#customer_city").val("{{customer_city}}");
+                        $("#customer_state").val("{{customer_state}}");
+                        $("#customer_zip").val("{{customer_zip}}");
+                        $("#customer_id").val("{{id}}");
+                    });
+                </script>
               </li>
-              {{/each}}
+            {{/each}}
           </section>
           {{/if}} 
         </div>
       </div>
       <div class="col d-flex align-items-start">
         <div>
-        {{!-- <form action="/action_page.php"> --}}
-          <label for="fname">customer_name: </label>
+          <label for="customer_name">customer_name: </label>
           <input type="text" id="customer_name" name="customer_name"><br><br>
-          <label for="lname">customer_address: </label>
+          <label for="customer_address">customer_address: </label>
           <input type="text" id="customer_address" name="customer_address"><br><br>
-          <label for="lname">customer_city: </label>
+          <label for="customer_city">customer_city: </label>
           <input type="text" id="customer_city" name="customer_city"><br><br>
-          <label for="lname">customer_state: </label>
+          <label for="customer_state">customer_state: </label>
           <input type="text" id="customer_state" name="customer_state"><br><br>
-          <label for="lname">customer_zip: </label>
+          <label for="customer_zip">customer_zip: </label>
           <input type="text" id="customer_zip" name="customer_zip"><br><br>
-          {{!-- <input type="submit" value="Submit"> --}}
-        {{!-- </form> --}}
-        {{!-- <button class="btn-primary" onclick="alert('Hello world!')">Click Me!</button> --}}
+          <input type="hidden" id="customer_id" name="customer_id"><br><br>
         </div>
       </div>
       <div class="col d-flex align-items-start">
-
-        <button class="btn-primary" onclick="alert('Hello world!')">Update</button>
-        <button class="btn-primary" onclick="alert('Hello world!')">Create</button>
-        <button class="btn-primary" onclick="alert('Hello world!')">Delete</button>
+        <button class="btn-primary update-customer" type='update'>Update</button>
+        <button class="btn-primary create-customer" type='create'>Create</button>
+        <button class="btn-primary delete-customer" type='delete'>Delete</button>
 
       </div>
     </div>
   </div>
 
 
-
+<script src="/javascript/add-customer.js"></script>
+<script src="/javascript/update-customer.js"></script>
+<script src="/javascript/delete-customer.js"></script>
 
 
  

@@ -1,4 +1,5 @@
  <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 
  <div class="container-lg px-1 py-5" id="icon-grid">
@@ -10,9 +11,21 @@
           <section>
               {{#each projects as |project|}}
               <li>
-
-          <button id={{id}} class="btn-primary" href="/project/"+{{id}}>{{title}}</button>
-
+              <button id={{id}} class="btn-primary" href="/project/"+{{id}}>{{title}}</button>
+                <script>
+                    $("#{{id}}").click(function(event) {
+                        $("#title").val("{{title}}");
+                        $("#shipping_name").val("{{shipping_name}}");
+                        $("#shipping_address").val("{{shipping_address}}");
+                        $("#shipping_city").val("{{shipping_city}}");
+                        $("#shipping_state").val("{{shipping_state}}");
+                        $("#shipping_zip").val("{{shipping_zip}}");
+                        $("#shipping_id").val("{{id}}");
+                        $("#customer_id").val("{{customer_id}}");
+                        $("#process_id").val("{{process_id}}");
+                        $("#project_id").val("{{id}}");
+                    });
+                </script>
               </li>
               {{/each}}
           </section>
@@ -25,19 +38,21 @@
           <label for="title">title: </label>
           <input type="text" id="title" name="title"><br><br>
           <label for="shipping_address">shipping_address: </label>
-          <input type="text" id="shipping_address" name="project_address"><br><br>
+          <input type="text" id="shipping_address" name="shipping_address"><br><br>
           <label for="shipping_city">shipping_city: </label>
-          <input type="text" id="shipping_city" name="project_city"><br><br>
+          <input type="text" id="shipping_city" name="shipping_city"><br><br>
           <label for="shipping_state">shipping_state: </label>
-          <input type="text" id="shipping_state" name="project_state"><br><br>
+          <input type="text" id="shipping_state" name="shipping_state"><br><br>
           <label for="shipping_zip">shipping_zip: </label>
-          <input type="text" id="shipping_zip" name="project_zip"><br><br>
+          <input type="text" id="shipping_zip" name="shipping_zip"><br><br>
 
           <label for="customer_id">customer_id: </label>
           <input type="text" id="customer_id" name="customer_id"><br><br>
 
           <label for="process_id">process_id: </label>
           <input type="text" id="process_id" name="process_id"><br><br>
+          <input type="hidden" id="project_id" name="project_id"><br><br>
+
           {{!-- <input type="submit" value="Submit"> --}}
         {{!-- </form> --}}
         {{!-- <button class="btn-primary" onclick="alert('Hello world!')">Click Me!</button> --}}
@@ -45,15 +60,17 @@
       </div>
       <div class="col d-flex align-items-start">
 
-        <button class="btn-primary" onclick="alert('Hello world!')">Update</button>
-        <button class="btn-primary" onclick="alert('Hello world!')">Create</button>
-        <button class="btn-primary" onclick="alert('Hello world!')">Delete</button>
+        <button class="btn-primary update-project">Update</button>
+        <button class="btn-primary create-project">Create</button>
+        <button class="btn-primary delete-project">Delete</button>
 
       </div>
     </div>
   </div>
 
-
+<script src="/javascript/add-project.js"></script>
+<script src="/javascript/update-project.js"></script>
+<script src="/javascript/delete-project.js"></script>
 
 
 

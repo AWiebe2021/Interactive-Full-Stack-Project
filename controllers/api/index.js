@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const customerRoutes = require('./customer-routes.js');
+const customerRoutes = require('./customer-routes');
 const departmentRoutes = require('./department-routes');
 const processRoutes = require('./process-routes');
 const projectRoutes = require('./project-routes');
