@@ -13,39 +13,39 @@ The requirements for this project ask us to use the skills and technologies we�
 
 They also ask us to use some of the less obvious skills we’ve practiced in the lessons and in your class. We’ve learned that there are many frameworks used in web development. 
 
-Technologies Used
-●HTML/CSS/Git
-●JavaScript
-●Sequelize package 
-●Handlebars.js 
-●MySQL2
-●Express.js
-●Dotenv
-●Bootstrap
-●The DOM
-●APIs
-●JQuery
-●JSON
+Technologies Used<br>
+●HTML/CSS/Git<br>
+●JavaScript<br>
+●Sequelize package <br>
+●Handlebars.js<br> 
+●MySQL2<br>
+●Express.js<br>
+●Dotenv<br>
+●Bootstrap<br>
+●The DOM<br>
+●APIs<br>
+●JQuery<br>
+●JSON<br>
 
 
 
-Your project should fulfill the following requirements:
+Your project should fulfill the following requirements:<br>
 
-  [X]  Be deployed to GitHub Pages.
-  [X]  Be interactive (i.e., accept and respond to user input).
-  [X]  Use at least two server-side APIs.
-  [X]  Does not use alerts, confirms, or prompts (use modals).
-  [X]  Use client-side storage to store persistent data.
-  [X]  Be responsive.
-  [X]  Have a polished UI.
-  [X]  Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-  [X]  Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-  [X]  Finally, you must add your project to the portfolio that you created in Module 2.
+  [X]  Be deployed to GitHub Pages.<br>
+  [X]  Be interactive (i.e., accept and respond to user input).<br>
+  [X]  Use at least two server-side APIs.<br>
+  [X]  Does not use alerts, confirms, or prompts (use modals).<br>
+  [X]  Use client-side storage to store persistent data.<br>
+  [X]  Be responsive.<br>
+  [X]  Have a polished UI.<br>
+  [X]  Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).<br>
+  [X]  Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).<br>
+  [X]  Finally, you must add your project to the portfolio that you created in Module 2.<br>
 
 
 ## Installation
 
-The project can be viewed at: https://s-hound.herokuapp.com/
+The project can be viewed at: https://s-hound.herokuapp.com/ <br>
 The projects code can be accessed at: https://github.com/AWiebe2021/Interactive-Full-Stack-Project
 
 ## Screenshot
@@ -53,8 +53,8 @@ The projects code can be accessed at: https://github.com/AWiebe2021/Interactive-
 
 ## Credits
 Team 1
-Aaron Wiebe - https://awiebe2021.github.io/awiebe-portfolio/
-Valeria Mercado - https://sxwqsd.github.io/
+Aaron Wiebe - https://awiebe2021.github.io/awiebe-portfolio/ <br>
+Valeria Mercado - https://sxwqsd.github.io/ <br>
 
-David Grogan
-Matthew Parker
+David Grogan<br>
+Matthew Parker<br>
