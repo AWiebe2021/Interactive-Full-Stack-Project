@@ -73,9 +73,9 @@ router.put('/:id', withAuth, (req, res) => {
     {
       title: req.body.title,
       shipping_address: req.body.shipping_address,
-      shipping_city: req.body.shipping_address,
-      shipping_state: req.body.shipping_address,
-      shipping_zip: req.body.shipping_address,
+      shipping_city: req.body.shipping_city,
+      shipping_state: req.body.shipping_state,
+      shipping_zip: req.body.shipping_zip,
       customer_id: req.body.customer_id,
       process_id: req.body.process_id
     },
